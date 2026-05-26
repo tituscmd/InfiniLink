@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		264BFE4426BC51CE0050A223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264BFE4326BC51CE0050A223 /* ContentView.swift */; };
 		264BFE4626BC51CF0050A223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264BFE4526BC51CF0050A223 /* Assets.xcassets */; };
 		264BFE4926BC51CF0050A223 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264BFE4826BC51CF0050A223 /* Preview Assets.xcassets */; };
+		75192A9A2FC62E570069B428 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75192A992FC62E570069B428 /* WidgetKit.framework */; };
+		75192A9C2FC62E570069B428 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75192A9B2FC62E570069B428 /* SwiftUI.framework */; };
+		75192AAD2FC62E590069B428 /* InfiniLinkWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 75192A982FC62E570069B428 /* InfiniLinkWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		75192AB42FC6364C0069B428 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75192AB32FC636420069B428 /* LiveActivityManager.swift */; };
+		75192AB52FC639340069B428 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75192AB32FC636420069B428 /* LiveActivityManager.swift */; };
 		E00A862A2DEB8383001533E1 /* FindLostDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A86292DEB8383001533E1 /* FindLostDeviceView.swift */; };
 		E00A86312DEBF3C1001533E1 /* RSSI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A86302DEBF3C1001533E1 /* RSSI.swift */; };
 		E02C620F2CD022A200C4D19B /* RecoveryModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02C620E2CD022A200C4D19B /* RecoveryModeView.swift */; };
@@ -133,7 +138,28 @@
 			remoteGlobalIDString = 264BFE3D26BC51CE0050A223;
 			remoteInfo = "Infini-iOS";
 		};
+		75192AAB2FC62E590069B428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 264BFE3626BC51CE0050A223 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75192A972FC62E570069B428;
+			remoteInfo = InfiniLinkWidgetsExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		75192AB22FC62E590069B428 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				75192AAD2FC62E590069B428 /* InfiniLinkWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		264BFE3E26BC51CE0050A223 /* InfiniLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +170,10 @@
 		264BFE4F26BC51CF0050A223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		264BFE5426BC51CF0050A223 /* InfiniLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		264BFE5F26BC51CF0050A223 /* InfiniLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		75192A982FC62E570069B428 /* InfiniLinkWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfiniLinkWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		75192A992FC62E570069B428 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		75192A9B2FC62E570069B428 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		75192AB32FC636420069B428 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		E00A86292DEB8383001533E1 /* FindLostDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindLostDeviceView.swift; sourceTree = "<group>"; };
 		E00A86302DEBF3C1001533E1 /* RSSI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSI.swift; sourceTree = "<group>"; };
 		E02C620E2CD022A200C4D19B /* RecoveryModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryModeView.swift; sourceTree = "<group>"; };
@@ -250,6 +280,27 @@
 		E0F366002DD6331700DAB5A4 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		75192AAE2FC62E590069B428 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 75192A972FC62E570069B428 /* InfiniLinkWidgetsExtension */;
+		};
+		75192AB72FC63B9B0069B428 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				InfiniLinkWidgetsLiveActivity.swift,
+			);
+			target = 264BFE3D26BC51CE0050A223 /* InfiniLink */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		75192A9D2FC62E570069B428 /* InfiniLinkWidgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (75192AB72FC63B9B0069B428 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 75192AAE2FC62E590069B428 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = InfiniLinkWidgets; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		264BFE3B26BC51CE0050A223 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -275,6 +326,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75192A952FC62E570069B428 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75192A9C2FC62E570069B428 /* SwiftUI.framework in Frameworks */,
+				75192A9A2FC62E570069B428 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -282,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				264BFE4026BC51CE0050A223 /* InfiniLink */,
+				75192A9D2FC62E570069B428 /* InfiniLinkWidgets */,
 				E0B85D702CB9905400D85122 /* Frameworks */,
 				264BFE3F26BC51CE0050A223 /* Products */,
 			);
@@ -293,6 +354,7 @@
 				264BFE3E26BC51CE0050A223 /* InfiniLink.app */,
 				264BFE5426BC51CF0050A223 /* InfiniLinkTests.xctest */,
 				264BFE5F26BC51CF0050A223 /* InfiniLinkUITests.xctest */,
+				75192A982FC62E570069B428 /* InfiniLinkWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,6 +553,7 @@
 		E0A7C07B2CB1AD2E0042A12D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				75192AB32FC636420069B428 /* LiveActivityManager.swift */,
 				E0A7C08F2CB1EE8F0042A12D /* DFUUpdater.swift */,
 				E05999FD2CB462BF00D64E0B /* ChartManager.swift */,
 				E0A7C0902CB1EE8F0042A12D /* DownloadManager.swift */,
@@ -574,6 +637,8 @@
 			isa = PBXGroup;
 			children = (
 				E0B85D712CB9905500D85122 /* Charts.framework */,
+				75192A992FC62E570069B428 /* WidgetKit.framework */,
+				75192A9B2FC62E570069B428 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -638,10 +703,12 @@
 				264BFE3A26BC51CE0050A223 /* Sources */,
 				264BFE3B26BC51CE0050A223 /* Frameworks */,
 				264BFE3C26BC51CE0050A223 /* Resources */,
+				75192AB22FC62E590069B428 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				75192AAC2FC62E590069B428 /* PBXTargetDependency */,
 			);
 			name = InfiniLink;
 			packageProductDependencies = (
@@ -689,6 +756,28 @@
 			productReference = 264BFE5F26BC51CF0050A223 /* InfiniLinkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		75192A972FC62E570069B428 /* InfiniLinkWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75192AAF2FC62E590069B428 /* Build configuration list for PBXNativeTarget "InfiniLinkWidgetsExtension" */;
+			buildPhases = (
+				75192A942FC62E570069B428 /* Sources */,
+				75192A952FC62E570069B428 /* Frameworks */,
+				75192A962FC62E570069B428 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				75192A9D2FC62E570069B428 /* InfiniLinkWidgets */,
+			);
+			name = InfiniLinkWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = InfiniLinkWidgetsExtension;
+			productReference = 75192A982FC62E570069B428 /* InfiniLinkWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -696,7 +785,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2640;
 				TargetAttributes = {
 					264BFE3D26BC51CE0050A223 = {
@@ -709,6 +798,9 @@
 					264BFE5E26BC51CF0050A223 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 264BFE3D26BC51CE0050A223;
+					};
+					75192A972FC62E570069B428 = {
+						CreatedOnToolsVersion = 26.4;
 					};
 				};
 			};
@@ -736,6 +828,7 @@
 				264BFE3D26BC51CE0050A223 /* InfiniLink */,
 				264BFE5326BC51CF0050A223 /* InfiniLinkTests */,
 				264BFE5E26BC51CF0050A223 /* InfiniLinkUITests */,
+				75192A972FC62E570069B428 /* InfiniLinkWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -776,6 +869,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75192A962FC62E570069B428 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -800,6 +900,7 @@
 				E0C7C83F2CAEF91C0043DA2D /* ConnectView.swift in Sources */,
 				E0B58CF92D0F2DE600F1ABBB /* AppearanceView.swift in Sources */,
 				E0A7C0842CB1B7A60042A12D /* WatchFaceView.swift in Sources */,
+				75192AB42FC6364C0069B428 /* LiveActivityManager.swift in Sources */,
 				E0C7C8392CAEF71F0043DA2D /* WelcomeView.swift in Sources */,
 				E0B85D1F2CB6248000D85122 /* ActiveExerciseView.swift in Sources */,
 				E07D8F242CC012FC005C1325 /* DeviceManager.swift in Sources */,
@@ -892,6 +993,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		75192A942FC62E570069B428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75192AB52FC639340069B428 /* LiveActivityManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -904,6 +1013,11 @@
 			isa = PBXTargetDependency;
 			target = 264BFE3D26BC51CE0050A223 /* InfiniLink */;
 			targetProxy = 264BFE6026BC51CF0050A223 /* PBXContainerItemProxy */;
+		};
+		75192AAC2FC62E590069B428 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75192A972FC62E570069B428 /* InfiniLinkWidgetsExtension */;
+			targetProxy = 75192AAB2FC62E590069B428 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1051,7 +1165,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = InfiniLink/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1083,7 +1197,7 @@
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = InfiniLink/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1182,6 +1296,75 @@
 			};
 			name = Release;
 		};
+		75192AB02FC62E590069B428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UXA3H4X42S;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfiniLinkWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InfiniLinkWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexemry.Infini-iOS.InfiniLinkWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75192AB12FC62E590069B428 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UXA3H4X42S;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfiniLinkWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InfiniLinkWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexemry.Infini-iOS.InfiniLinkWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1217,6 +1400,15 @@
 			buildConfigurations = (
 				264BFE6F26BC51CF0050A223 /* Debug */,
 				264BFE7026BC51CF0050A223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75192AAF2FC62E590069B428 /* Build configuration list for PBXNativeTarget "InfiniLinkWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75192AB02FC62E590069B428 /* Debug */,
+				75192AB12FC62E590069B428 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

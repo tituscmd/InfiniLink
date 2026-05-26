@@ -25,6 +25,7 @@ class ExerciseViewModel: ObservableObject {
     @Published var timer: Timer?
     @Published var userExercises = [UserExercise]()
     @Published var pinnedExerciseIds = [String]()
+    @Published var lastHeartRate: Int? = nil
     
     var appDidEnterBackgroundDate: Date?
     
@@ -109,6 +110,11 @@ class ExerciseViewModel: ObservableObject {
         reset()
         currentExercise = exercise
         startTimer()
+        LiveActivityManager.shared.start(
+            name: exercise.name,
+            icon: exercise.icon,
+            hasSteps: exercise.components.contains(.steps)
+        )
     }
     
     func stopTimer() {
@@ -168,6 +174,17 @@ class ExerciseViewModel: ObservableObject {
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.exerciseTime += 1
+            if let exercise = self.currentExercise {
+                DispatchQueue.main.async {
+                    LiveActivityManager.shared.update(
+                        duration: self.exerciseTime,
+                        heartRate: self.lastHeartRate,
+                        steps: exercise.components.contains(.steps) ? self.stepsTaken : nil,
+                        calories: exercise.components.contains(.steps) ? FitnessCalculator().calculateCaloriesBurned(steps: self.stepsTaken) : nil,
+                        icon: exercise.icon
+                    )
+                }
+            }
         }
     }
 }

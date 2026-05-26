@@ -40,7 +40,7 @@ struct ActiveExerciseView: View {
                         HStack(spacing: 6) {
                             Image(systemName: "heart.fill")
                                 .foregroundStyle(.red)
-                            Text(String(format: "%.0f", previousHeartPoints.compactMap({ $0.value }).last ?? 0))
+                            Text(String(format: "%d", previousHeartPoints.compactMap({ $0.value }).last ?? 0))
                         }
                     }
                     if exercise.components.contains(.steps) {
@@ -103,7 +103,7 @@ struct ActiveExerciseView: View {
                 if exerciseViewModel.exerciseTime >= 30 {
                     exerciseViewModel.saveExercise(exercise, startDate: Date().addingTimeInterval(-exerciseViewModel.exerciseTime), heartPoints: Array(heartPoints))
                 }
-                
+                LiveActivityManager.shared.stop()
                 exerciseViewModel.currentExercise = nil
                 exerciseViewModel.timer?.invalidate()
             } label: {
@@ -120,6 +120,16 @@ struct ActiveExerciseView: View {
             
             newHeartPoints = currentHeartPoints.filter { !previousHeartPoints.contains($0) }
             previousHeartPoints = currentHeartPoints
+            exerciseViewModel.lastHeartRate = Int(previousHeartPoints.compactMap({ $0.value }).last ?? 0)
+            
+            guard let exercise = exerciseViewModel.currentExercise else { return }
+            LiveActivityManager.shared.update(
+                duration: exerciseViewModel.exerciseTime,
+                heartRate: exerciseViewModel.lastHeartRate,
+                steps: exercise.components.contains(.steps) ? exerciseViewModel.stepsTaken : nil,
+                calories: exercise.components.contains(.steps) ? fitnessCalculator.calculateCaloriesBurned(steps: exerciseViewModel.stepsTaken) : nil,
+                icon: exercise.icon
+            )
         }
         .onChange(of: bleManager.stepCount) { allSteps in
             let steps = max(0, allSteps - currentStepCount)
