@@ -60,11 +60,14 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                                .font(.largeTitle)
                            Text(context.attributes.activityName)
                                .font(.title2.bold())
+                               .lineLimit(1)
+                           Spacer()
                            Text(Duration.seconds(context.state.duration), format: .time(pattern: .minuteSecond))
-                               .font(.title2.monospacedDigit())
-                               .frame(maxWidth: .infinity, alignment: .trailing)
+                               .font(.title2.bold().monospacedDigit())
                                .contentTransition(.numericText())
+                               .padding(.trailing, 16)
                        }
+                       .padding(.top, 10)
                        HStack(spacing: 16) {
                            if let hr = context.state.heartRate {
                                Label("\(hr)", systemImage: "heart.fill")
@@ -83,7 +86,11 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                            }
                            Spacer()
                        }
+                       .padding(.leading, 8)
+                       .padding(.top, 10)
                    }
+                   .padding(.top, -32)
+                   .frame(height: 80)
                }
            } compactLeading: {
                Image(systemName: context.state.icon)
@@ -99,14 +106,14 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                Image(systemName: context.state.icon)
                    .foregroundColor(.orange)
            }
-           .keylineTint(.blue)
+           .keylineTint(.orange)
        }
    }
 }
 
 extension InfiniLinkWidgetsAttributes {
    fileprivate static var preview: InfiniLinkWidgetsAttributes {
-       InfiniLinkWidgetsAttributes(activityName: "Outdoor Run")
+       InfiniLinkWidgetsAttributes(activityName: "Strength Training")
    }
 }
 
@@ -114,7 +121,7 @@ extension InfiniLinkWidgetsAttributes.ContentState {
    fileprivate static var sample: InfiniLinkWidgetsAttributes.ContentState {
        InfiniLinkWidgetsAttributes.ContentState(
            icon: "figure.run",
-           duration: 2,
+           duration: 2438,
            heartRate: 143,
            steps: 1200,
            calories: 260
