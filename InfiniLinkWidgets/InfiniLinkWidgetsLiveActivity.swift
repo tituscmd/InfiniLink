@@ -26,19 +26,23 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                    Text(Duration.seconds(context.state.duration), format: .time(pattern: .minuteSecond))
                        .font(.title2.monospacedDigit())
                        .frame(maxWidth: .infinity, alignment: .trailing)
+                       .contentTransition(.numericText())
                }
                HStack(spacing: 16) {
                    if let hr = context.state.heartRate {
                        Label("\(hr)", systemImage: "heart.fill")
                            .foregroundColor(.red)
+                           .contentTransition(.numericText())
                    }
                    if let steps = context.state.steps {
                        Label("\(steps)", systemImage: "shoeprints.fill")
                            .foregroundColor(.blue)
+                           .contentTransition(.numericText())
                    }
                    if let cal = context.state.calories {
                        Label("\(cal)", systemImage: "flame.fill")
                            .foregroundColor(.orange)
+                           .contentTransition(.numericText())
                    }
                    Spacer()
                }
@@ -59,19 +63,23 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                            Text(Duration.seconds(context.state.duration), format: .time(pattern: .minuteSecond))
                                .font(.title2.monospacedDigit())
                                .frame(maxWidth: .infinity, alignment: .trailing)
+                               .contentTransition(.numericText())
                        }
                        HStack(spacing: 16) {
                            if let hr = context.state.heartRate {
                                Label("\(hr)", systemImage: "heart.fill")
                                    .foregroundColor(.red)
+                                   .contentTransition(.numericText())
                            }
                            if let steps = context.state.steps {
                                Label("\(steps)", systemImage: "shoeprints.fill")
                                    .foregroundColor(.blue)
+                                   .contentTransition(.numericText())
                            }
                            if let cal = context.state.calories {
                                Label("\(cal)", systemImage: "flame.fill")
                                    .foregroundColor(.orange)
+                                   .contentTransition(.numericText())
                            }
                            Spacer()
                        }
@@ -85,6 +93,8 @@ struct InfiniLinkWidgetsLiveActivity: Widget {
                Text(Duration.seconds(context.state.duration), format: .time(pattern: .minuteSecond))
                    .foregroundColor(.orange)
                    .monospacedDigit()
+                   .padding(.trailing, 4)
+                   .contentTransition(.numericText())
            } minimal: {
                Image(systemName: context.state.icon)
                    .foregroundColor(.orange)
